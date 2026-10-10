@@ -5,6 +5,7 @@ class_name Rail extends Path2D
 @export var rail_color: Color = Color(0.345, 0.423, 0.793, 1.0)
 func _ready() -> void:
 	add_child(line)
+	move_child(line, 0)
 	
 	line.points = curve.get_baked_points()
 	line.width = 12
