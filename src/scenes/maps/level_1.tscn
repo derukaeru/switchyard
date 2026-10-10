@@ -1,0 +1,38 @@
+[gd_scene format=3 uid="uid://m8way4bwk7ig"]
+
+[ext_resource type="Script" uid="uid://dyiitrgmhhcml" path="res://src/scenes/maps/level_1.gd" id="1_5qwrs"]
+[ext_resource type="Script" uid="uid://cuym172wt4qwo" path="res://src/scripts/components/rail.gd" id="2_5qwrs"]
+
+[sub_resource type="Curve2D" id="Curve2D_m0mif"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 580, -96, 0, 0, 0, 0, 573, 724, 0, 0, 0, 0, -48, 389)
+}
+point_count = 3
+
+[node name="level_1" type="Node2D" unique_id=504227865]
+script = ExtResource("1_5qwrs")
+
+[node name="background" type="Control" parent="." unique_id=1416017392]
+layout_mode = 3
+anchors_preset = 0
+offset_left = -111.0
+offset_top = -60.0
+offset_right = 1229.0
+offset_bottom = 961.0
+
+[node name="ColorRect" type="ColorRect" parent="background" unique_id=1871954178]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.85, 0.8203917, 0.7565, 1)
+
+[node name="tracks" type="Node2D" parent="." unique_id=755398829]
+
+[node name="Rail" type="Path2D" parent="tracks" unique_id=2118364005]
+curve = SubResource("Curve2D_m0mif")
+script = ExtResource("2_5qwrs")
+rail_color = null
+metadata/_custom_type_script = "uid://cuym172wt4qwo"

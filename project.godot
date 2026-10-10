@@ -11,6 +11,7 @@ config_version=5
 [application]
 
 config/name="switchyard"
+run/main_scene="uid://ba7oaysnp8c1s"
 config/features=PackedStringArray("4.7", "GL Compatibility")
 config/icon="res://icon.svg"
 
@@ -20,10 +21,11 @@ GameManager="*uid://dbpig2a8suvqu"
 Registry="*uid://bwobdfaseiry3"
 SceneChanger="*uid://b5iibn8hh0lk4"
 Util="*uid://dr2t418jktv0w"
+EventManager="*uid://chtwe02g0ctj3"
 
 [display]
 
-window/size/viewport_width=928
+window/size/viewport_height=904
 window/stretch/mode="viewport"
 window/stretch/aspect="keep_height"
 
