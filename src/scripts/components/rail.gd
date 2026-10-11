@@ -2,7 +2,9 @@
 class_name Rail extends Path2D
 
 @onready var line: Line2D = Line2D.new()
+@export var rail_id: int = 1
 @export var rail_color: Color = Color(0.345, 0.423, 0.793, 1.0)
+
 func _ready() -> void:
 	add_child(line)
 	move_child(line, 0)
