@@ -37,6 +37,10 @@ project/assembly_name="switchyard"
 
 enabled=PackedStringArray("res://addons/godot_super-wakatime/plugin.cfg")
 
+[gui]
+
+theme/custom_font="uid://lcay2652jc6e"
+
 [physics]
 
 3d/physics_engine="Jolt Physics"

@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://ccarek0jljrpr"]
+
+[node name="switch" type="Button" unique_id=186754376]
+offset_right = 8.0
+offset_bottom = 8.0
+flat = true

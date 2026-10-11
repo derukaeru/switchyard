@@ -1,0 +1,18 @@
+[gd_scene format=3 uid="uid://bt4sgd4tuexfh"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_eivm1"]
+font_size = 32
+font_color = Color(0.3733023, 0.5544323, 1, 1)
+
+[node name="tunnel" type="ColorRect" unique_id=1344067968]
+offset_right = 64.0
+offset_bottom = 64.0
+
+[node name="Label" type="Label" parent="." unique_id=59484460]
+layout_mode = 0
+offset_right = 64.0
+offset_bottom = 64.0
+text = "1"
+label_settings = SubResource("LabelSettings_eivm1")
+horizontal_alignment = 1
+vertical_alignment = 1

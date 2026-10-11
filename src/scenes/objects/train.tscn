@@ -5,7 +5,7 @@
 [node name="train" type="PathFollow2D" unique_id=1286344413]
 script = ExtResource("1_3mrl3")
 
-[node name="ColorRect" type="ColorRect" parent="." unique_id=506455160]
+[node name="cab" type="ColorRect" parent="." unique_id=506455160]
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
