@@ -1,3 +1,6 @@
 [gd_scene format=3 uid="uid://c1ym5g1bxpeyb"]
 
+[ext_resource type="Script" uid="uid://ch6awljrbtrrn" path="res://src/scenes/maps/level_2.gd" id="1_hsvua"]
+
 [node name="level_2" type="Node2D" unique_id=1182047937]
+script = ExtResource("1_hsvua")

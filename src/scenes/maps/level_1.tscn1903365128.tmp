@@ -1,0 +1,111 @@
+[gd_scene format=3 uid="uid://m8way4bwk7ig"]
+
+[ext_resource type="Script" uid="uid://dyiitrgmhhcml" path="res://src/scenes/maps/level_1.gd" id="1_5qwrs"]
+[ext_resource type="PackedScene" uid="uid://cbe6816t855is" path="res://src/scenes/objects/train.tscn" id="1_pfttx"]
+[ext_resource type="Script" uid="uid://cuym172wt4qwo" path="res://src/scripts/components/rail.gd" id="2_5qwrs"]
+[ext_resource type="Script" uid="uid://bg601bgnlfut0" path="res://src/scripts/components/rail_label.gd" id="4_46tth"]
+[ext_resource type="Script" uid="uid://dp8ggqt5j2ynj" path="res://src/scripts/components/junction.gd" id="6_ju8f6"]
+
+[sub_resource type="Curve2D" id="Curve2D_m0mif"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 580, -447, 0, 0, 0, 0, 580, 494)
+}
+point_count = 2
+
+[sub_resource type="Curve2D" id="Curve2D_h8pal"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 581, 494, 0, 0, 0, 0, 579, 1022)
+}
+point_count = 2
+
+[sub_resource type="Curve2D" id="Curve2D_5qwrs"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, -600, 400, 0, 0, 0, 0, 353, 400, 0, 0, 0, 0, 580, 495)
+}
+point_count = 3
+
+[sub_resource type="Curve2D" id="Curve2D_ju8f6"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 581, 496, 0, 0, 0, 0, 697, 538, 0, 0, 0, 0, 1223, 545)
+}
+point_count = 3
+
+[sub_resource type="LabelSettings" id="LabelSettings_vji7h"]
+font_size = 48
+
+[sub_resource type="LabelSettings" id="LabelSettings_va2ru"]
+font_size = 48
+
+[node name="level_1" type="Node2D" unique_id=504227865]
+script = ExtResource("1_5qwrs")
+
+[node name="tracks" type="Node2D" parent="." unique_id=755398829]
+
+[node name="Rail" type="Path2D" parent="tracks" unique_id=2118364005 node_paths=PackedStringArray("end_junction")]
+curve = SubResource("Curve2D_m0mif")
+script = ExtResource("2_5qwrs")
+end_junction = NodePath("../Junction")
+rail_color = Color(0.3476, 0.4287066, 0.79, 1)
+metadata/_custom_type_script = "uid://cuym172wt4qwo"
+
+[node name="train" parent="tracks/Rail" unique_id=1286344413 instance=ExtResource("1_pfttx")]
+position = Vector2(580, -447)
+rotation = 1.5707964
+
+[node name="ExitRail1" type="Path2D" parent="tracks" unique_id=1418841183 node_paths=PackedStringArray("end_junction")]
+curve = SubResource("Curve2D_h8pal")
+script = ExtResource("2_5qwrs")
+end_junction = NodePath("../Junction")
+metadata/_custom_type_script = "uid://cuym172wt4qwo"
+
+[node name="Rail2" type="Path2D" parent="tracks" unique_id=609968600 node_paths=PackedStringArray("end_junction")]
+curve = SubResource("Curve2D_5qwrs")
+script = ExtResource("2_5qwrs")
+end_junction = NodePath("../Junction")
+rail_color = Color(0.91, 0.38584003, 0.32760003, 1)
+metadata/_custom_type_script = "uid://cuym172wt4qwo"
+
+[node name="train" parent="tracks/Rail2" unique_id=86710733 instance=ExtResource("1_pfttx")]
+position = Vector2(-600, 400)
+speed = 280
+
+[node name="ExitRail2" type="Path2D" parent="tracks" unique_id=818754284 node_paths=PackedStringArray("end_junction")]
+curve = SubResource("Curve2D_ju8f6")
+script = ExtResource("2_5qwrs")
+end_junction = NodePath("../Junction")
+rail_color = Color(0.9098039, 0.38431373, 0.32941177, 1)
+metadata/_custom_type_script = "uid://cuym172wt4qwo"
+
+[node name="Junction" type="Node2D" parent="tracks" unique_id=284340649 node_paths=PackedStringArray("rails")]
+position = Vector2(580, 495)
+script = ExtResource("6_ju8f6")
+rails = [NodePath("../Rail"), NodePath("../Rail2")]
+metadata/_custom_type_script = "uid://dp8ggqt5j2ynj"
+
+[node name="labels" type="Control" parent="." unique_id=302543939]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="RailLabel" type="Label" parent="labels" unique_id=754733772]
+layout_mode = 0
+offset_left = 564.0
+offset_top = 855.0
+offset_right = 604.0
+offset_bottom = 904.0
+text = "1"
+label_settings = SubResource("LabelSettings_vji7h")
+script = ExtResource("4_46tth")
+metadata/_custom_type_script = "uid://bg601bgnlfut0"
+
+[node name="RailLabel2" type="Label" parent="labels" unique_id=1502186753]
+layout_mode = 0
+offset_left = 1112.0
+offset_top = 538.0
+offset_right = 1152.0
+offset_bottom = 587.0
+text = "2"
+label_settings = SubResource("LabelSettings_va2ru")
+script = ExtResource("4_46tth")
+metadata/_custom_type_script = "uid://bg601bgnlfut0"
