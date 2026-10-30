@@ -6,9 +6,11 @@ class_name Train extends PathFollow2D
 @export var speed: int = 160
 @export var destination: int = 1
 
+@export var looping: bool = false
+
 func _ready() -> void:
 	cab.color = train_color
-	loop = false
+	loop = looping
 
 func _process(delta: float) -> void: 
 	var rail: Rail = get_parent() as Rail
