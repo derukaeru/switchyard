@@ -8,10 +8,11 @@ class_name Train extends PathFollow2D
 
 @export var arrow_spacing: float = 40.0
 @export var arrow_size: float = 6.0
+@export var looping: bool = false
 
 func _ready() -> void:
-	cab.color = color
-	loop = false
+	cab.color = train_color
+	loop = looping
 
 func _process(delta: float) -> void: 
 	var rail: Rail = get_parent() as Rail
