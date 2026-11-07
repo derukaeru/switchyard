@@ -1,0 +1,14 @@
+[gd_scene format=3 uid="uid://8hvm6to8ikt6"]
+
+[ext_resource type="Script" uid="uid://bbmm47er23f1p" path="res://src/scenes/maps/level_4.gd" id="1_skg6t"]
+
+[node name="level_4" type="Node2D" unique_id=416987576]
+script = ExtResource("1_skg6t")
+
+[node name="tracks" type="Node2D" parent="." unique_id=2098620928]
+
+[node name="labels" type="Control" parent="." unique_id=1604854634]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0

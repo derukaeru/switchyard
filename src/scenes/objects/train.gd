@@ -2,12 +2,15 @@ class_name Train extends PathFollow2D
 
 @onready var cab: ColorRect = $cab
 
-@export var train_color: Color = Color("6f98dc")
+@export var color: Color = Color("6f98dc")
 @export var speed: int = 160
 @export var destination: int = 1
 
+@export var arrow_spacing: float = 40.0
+@export var arrow_size: float = 6.0
+
 func _ready() -> void:
-	cab.color = train_color
+	cab.color = color
 	loop = false
 
 func _process(delta: float) -> void: 

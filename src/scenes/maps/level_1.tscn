@@ -7,27 +7,27 @@
 [ext_resource type="PackedScene" uid="uid://ccarek0jljrpr" path="res://src/scenes/objects/switch.tscn" id="5_ju8f6"]
 [ext_resource type="Script" uid="uid://dp8ggqt5j2ynj" path="res://src/scripts/components/junction.gd" id="6_ju8f6"]
 
-[sub_resource type="Curve2D" id="Curve2D_h8pal"]
-_data = {
-"points": PackedVector2Array(0, 0, 0, 0, 580, 493, 0, 0, 0, 0, 580, 1025)
-}
-point_count = 2
-
-[sub_resource type="Curve2D" id="Curve2D_ju8f6"]
-_data = {
-"points": PackedVector2Array(0, 0, 0, 0, 573, 493, 0, 0, 0, 0, 747, 565, 0, 0, 0, 0, 1279, 562)
-}
-point_count = 3
-
 [sub_resource type="Curve2D" id="Curve2D_m0mif"]
 _data = {
 "points": PackedVector2Array(0, 0, 0, 0, 580, -447, 0, 0, 0, 0, 580, 494)
 }
 point_count = 2
 
+[sub_resource type="Curve2D" id="Curve2D_h8pal"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 580, 493, 0, 0, 0, 0, 580, 1025)
+}
+point_count = 2
+
 [sub_resource type="Curve2D" id="Curve2D_5qwrs"]
 _data = {
 "points": PackedVector2Array(0, 0, 0, 0, -600, 400, 0, 0, 0, 0, 353, 400, 0, 0, 0, 0, 580, 495)
+}
+point_count = 3
+
+[sub_resource type="Curve2D" id="Curve2D_ju8f6"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 573, 493, 0, 0, 0, 0, 747, 565, 0, 0, 0, 0, 1279, 562)
 }
 point_count = 3
 
@@ -42,40 +42,44 @@ script = ExtResource("1_5qwrs")
 
 [node name="tracks" type="Node2D" parent="." unique_id=755398829]
 
-[node name="Rail3" type="Path2D" parent="tracks" unique_id=304619894]
-curve = SubResource("Curve2D_h8pal")
-script = ExtResource("2_5qwrs")
-metadata/_custom_type_script = "uid://cuym172wt4qwo"
-
-[node name="Rail4" type="Path2D" parent="tracks" unique_id=875992632]
-curve = SubResource("Curve2D_ju8f6")
-script = ExtResource("2_5qwrs")
-rail_color = Color(0.9098039, 0.38431373, 0.32941177, 1)
-id = 2
-metadata/_custom_type_script = "uid://cuym172wt4qwo"
-
 [node name="Rail" type="Path2D" parent="tracks" unique_id=2118364005 node_paths=PackedStringArray("end_junction")]
 curve = SubResource("Curve2D_m0mif")
 script = ExtResource("2_5qwrs")
 end_junction = NodePath("../Junction")
-rail_color = Color(0.3476, 0.4287066, 0.79, 1)
+arrow_spacing = 40.0
 metadata/_custom_type_script = "uid://cuym172wt4qwo"
 
 [node name="train" parent="tracks/Rail" unique_id=1286344413 instance=ExtResource("1_pfttx")]
 position = Vector2(580, -447)
 rotation = 1.5707964
+speed = null
+destination = null
+
+[node name="Rail3" type="Path2D" parent="tracks" unique_id=304619894]
+curve = SubResource("Curve2D_h8pal")
+script = ExtResource("2_5qwrs")
+arrow_spacing = 40.0
+metadata/_custom_type_script = "uid://cuym172wt4qwo"
 
 [node name="Rail2" type="Path2D" parent="tracks" unique_id=609968600 node_paths=PackedStringArray("end_junction")]
 curve = SubResource("Curve2D_5qwrs")
 script = ExtResource("2_5qwrs")
 end_junction = NodePath("../Junction")
-rail_color = Color(0.91, 0.38584003, 0.32760003, 1)
+arrow_spacing = 40.0
 id = 2
 metadata/_custom_type_script = "uid://cuym172wt4qwo"
 
 [node name="train" parent="tracks/Rail2" unique_id=86710733 instance=ExtResource("1_pfttx")]
 position = Vector2(-600, 400)
 speed = 280
+destination = null
+
+[node name="Rail4" type="Path2D" parent="tracks" unique_id=875992632]
+curve = SubResource("Curve2D_ju8f6")
+script = ExtResource("2_5qwrs")
+arrow_spacing = 40.0
+id = 2
+metadata/_custom_type_script = "uid://cuym172wt4qwo"
 
 [node name="Junction" type="Node2D" parent="tracks" unique_id=284340649 node_paths=PackedStringArray("rails")]
 position = Vector2(580, 495)
