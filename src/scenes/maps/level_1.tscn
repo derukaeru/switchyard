@@ -88,7 +88,6 @@ color = Color(0.8509804, 0.83137256, 0.7921569, 1)
 curve = SubResource("Curve2D_m0mif")
 script = ExtResource("2_5qwrs")
 end_junction = NodePath("../Junction")
-active = null
 arrow_spacing = 40.0
 metadata/_custom_type_script = "uid://cuym172wt4qwo"
 
@@ -100,7 +99,6 @@ destination = 2
 [node name="Rail3" type="Path2D" parent="tracks" unique_id=304619894]
 curve = SubResource("Curve2D_h8pal")
 script = ExtResource("2_5qwrs")
-active = null
 arrow_spacing = 40.0
 metadata/_custom_type_script = "uid://cuym172wt4qwo"
 
@@ -108,7 +106,6 @@ metadata/_custom_type_script = "uid://cuym172wt4qwo"
 curve = SubResource("Curve2D_5qwrs")
 script = ExtResource("2_5qwrs")
 end_junction = NodePath("../Junction")
-active = null
 arrow_spacing = 40.0
 id = 2
 metadata/_custom_type_script = "uid://cuym172wt4qwo"
@@ -120,7 +117,6 @@ speed = 280
 [node name="Rail4" type="Path2D" parent="tracks" unique_id=875992632]
 curve = SubResource("Curve2D_ju8f6")
 script = ExtResource("2_5qwrs")
-active = null
 arrow_spacing = 40.0
 id = 2
 metadata/_custom_type_script = "uid://cuym172wt4qwo"

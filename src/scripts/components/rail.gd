@@ -30,23 +30,18 @@ func get_next_rail() -> Rail:
 func _draw() -> void:
 	if not active or end_junction: return
 	
-	var points: PackedVector2Array = curve.get_baked_points()
-	@warning_ignore("integer_division")
-	for i in int(points.size() / 16) - 1:
-		var pos: int = ((i + 1) * 16)
-		var prev_pos: int = max(0, ((i + 1) * 16))
+	var length: float = curve.get_baked_length()
+
+	for distance in range(32, int(length), 64):
+		var point: Vector2 = curve.sample_baked(distance)
+		var prev_point: Vector2 = curve.sample_baked(distance - 2.0)
 		
-		if pos < points.size():
-			
-			var point: Vector2 = points[pos]
-			var prev_point: Vector2 = points[prev_pos]
-			
-			var dir: Vector2 = prev_point.direction_to(point)
-			var left_wing = point + dir.rotated(2.5) * head_size
-			var right_wing = point + dir.rotated(-2.5) * head_size
-			
-			var triangle_points = PackedVector2Array([point, left_wing, right_wing])
-			draw_polygon(triangle_points, PackedColorArray([Color()]))
-			
+		var dir: Vector2 = prev_point.direction_to(point)
+		var left_wing = point + dir.rotated(2.5) * head_size
+		var right_wing = point + dir.rotated(-2.5) * head_size
+		
+		draw_line(point, left_wing, color, 6)
+		draw_line(point, right_wing, color, 6)
+
 func _process(_delta: float) -> void:
 	queue_redraw()
