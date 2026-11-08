@@ -5,10 +5,22 @@ signal switched(rail_index: int)
 @export var rails: Array[Rail] = []
 @export var rail_index: int = 0
 
+func _ready() -> void:
+	for rail in rails:
+		rail.active = false
+	
+	rails[rail_index].active = true
+
 func switch_track() -> void:
 	if rails.size() < 2:
 		return
+		
 	rail_index = (rail_index + 1) % rails.size()
+	
+	for rail in rails:
+		rail.active = false
+	rails[rail_index].active = true
+	
 	switched.emit(rail_index)
 	
 func get_active_rail() -> Path2D:

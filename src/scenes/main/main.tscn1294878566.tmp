@@ -1,0 +1,26 @@
+[gd_scene format=3 uid="uid://ba7oaysnp8c1s"]
+
+[ext_resource type="Script" uid="uid://64cyq1ipotyv" path="res://src/scenes/main/main.gd" id="1_hsw67"]
+[ext_resource type="PackedScene" uid="uid://m8way4bwk7ig" path="res://src/scenes/maps/level_1.tscn" id="2_4rfip"]
+
+[node name="main" type="Node2D" unique_id=34602153]
+script = ExtResource("1_hsw67")
+
+[node name="background" type="Control" parent="." unique_id=219414908]
+layout_mode = 3
+anchors_preset = 0
+offset_left = -111.0
+offset_top = -60.0
+offset_right = 1229.0
+offset_bottom = 961.0
+
+[node name="ColorRect" type="ColorRect" parent="background" unique_id=1770555584]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.85, 0.83115834, 0.79050004, 1)
+
+[node name="level_1" parent="." unique_id=504227865 instance=ExtResource("2_4rfip")]

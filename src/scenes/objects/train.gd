@@ -11,7 +11,7 @@ class_name Train extends PathFollow2D
 @export var looping: bool = false
 
 func _ready() -> void:
-	cab.color = train_color
+	cab.color = color
 	loop = looping
 
 func _process(delta: float) -> void: 
@@ -33,4 +33,10 @@ func _process(delta: float) -> void:
 	progress = target - length
 
 func arrived() -> void:
+	if get_parent().id == destination:
+		print("correct")
+	else:
+		print("wrong")
+	
 	set_process(false)
+	

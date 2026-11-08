@@ -3,6 +3,7 @@
 [ext_resource type="Script" uid="uid://dg8tn1qt6u7sp" path="res://src/scenes/objects/train.gd" id="1_3mrl3"]
 
 [node name="train" type="PathFollow2D" unique_id=1286344413]
+z_index = 1
 script = ExtResource("1_3mrl3")
 
 [node name="cab" type="ColorRect" parent="." unique_id=506455160]
