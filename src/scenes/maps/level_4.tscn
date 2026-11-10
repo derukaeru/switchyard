@@ -6,9 +6,3 @@
 script = ExtResource("1_skg6t")
 
 [node name="tracks" type="Node2D" parent="." unique_id=2098620928]
-
-[node name="labels" type="Control" parent="." unique_id=1604854634]
-layout_mode = 3
-anchors_preset = 0
-offset_right = 40.0
-offset_bottom = 40.0

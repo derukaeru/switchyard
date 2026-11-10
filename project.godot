@@ -25,7 +25,8 @@ EventManager="*uid://chtwe02g0ctj3"
 
 [display]
 
-window/size/viewport_height=904
+window/size/viewport_width=1216
+window/size/viewport_height=968
 window/stretch/mode="viewport"
 
 [dotnet]

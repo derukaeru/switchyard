@@ -1,0 +1,8 @@
+[gd_scene format=3 uid="uid://brh1827u25137"]
+
+[ext_resource type="Script" uid="uid://vxbf8ijovt76" path="res://src/scenes/maps/level_5.gd" id="1_3a0ly"]
+
+[node name="level_5" type="Node2D" unique_id=416987576]
+script = ExtResource("1_3a0ly")
+
+[node name="tracks" type="Node2D" parent="." unique_id=2098620928]

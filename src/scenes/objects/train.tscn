@@ -2,6 +2,23 @@
 
 [ext_resource type="Script" uid="uid://dg8tn1qt6u7sp" path="res://src/scenes/objects/train.gd" id="1_3mrl3"]
 
+[sub_resource type="Gradient" id="Gradient_3mrl3"]
+colors = PackedColorArray(0.24115604, 0.24115604, 0.24115604, 1, 0.427493, 0.42749307, 0.42749307, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_3mrl3"]
+gradient = SubResource("Gradient_3mrl3")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_2yfux"]
+particle_flag_disable_z = true
+direction = Vector3(0, -1, 0)
+spread = 20.0
+initial_velocity_min = 8.0
+initial_velocity_max = 24.0
+gravity = Vector3(0, 2, 0)
+scale_min = 5.0
+scale_max = 9.0
+color_initial_ramp = SubResource("GradientTexture1D_3mrl3")
+
 [node name="train" type="PathFollow2D" unique_id=1286344413]
 z_index = 1
 script = ExtResource("1_3mrl3")
@@ -19,3 +36,10 @@ offset_bottom = 17.0
 grow_horizontal = 2
 grow_vertical = 2
 color = Color(0.43598932, 0.594163, 0.8636868, 1)
+
+[node name="GPUParticles2D" type="GPUParticles2D" parent="." unique_id=2122502034]
+position = Vector2(22, -9)
+amount = 32
+lifetime = 3.0
+randomness = 1.0
+process_material = SubResource("ParticleProcessMaterial_2yfux")

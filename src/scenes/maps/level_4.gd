@@ -1,11 +1,21 @@
 extends Node2D
 
+@export var train_amount: int = 2
+var trains: Array = [] # if they get to the right destination
 
-# Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	pass # Replace with function body.
+	EventManager.train_correct.connect(train_correct)
+	EventManager.train_wrong.connect(train_wrong)
 
+func train_correct() -> void:
+	trains.append(true)
+	update_trains()
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
-	pass
+func train_wrong() -> void:
+	trains.append(false)
+	update_trains()
+
+func update_trains() -> void:
+	if not trains.size() >= train_amount: return
+	
+	# finished

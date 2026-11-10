@@ -6,10 +6,3 @@
 script = ExtResource("1_a838m")
 
 [node name="tracks" type="Node2D" parent="." unique_id=755398829]
-
-[node name="labels" type="Control" parent="." unique_id=302543939]
-layout_mode = 3
-anchors_preset = 0
-offset_right = 40.0
-offset_bottom = 40.0
-metadata/_edit_use_anchors_ = true

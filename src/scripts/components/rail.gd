@@ -8,7 +8,7 @@ class_name Rail extends Path2D
 @export var arrow_size: float = 6.0
 
 @onready var line: Line2D = Line2D.new()
-@export var color: Color = Color(0.345, 0.423, 0.793, 1.0)
+@export var color: Color = Color("586ccaff")
 
 @export var id: int = 1
 var head_size: int = 32
@@ -37,8 +37,8 @@ func _draw() -> void:
 		var prev_point: Vector2 = curve.sample_baked(distance - 2.0)
 		
 		var dir: Vector2 = prev_point.direction_to(point)
-		var left_wing = point + dir.rotated(2.5) * head_size
-		var right_wing = point + dir.rotated(-2.5) * head_size
+		var left_wing: Vector2 = point + dir.rotated(2.5) * head_size
+		var right_wing: Vector2 = point + dir.rotated(-2.5) * head_size
 		
 		draw_line(point, left_wing, color, 6)
 		draw_line(point, right_wing, color, 6)
