@@ -104,6 +104,7 @@ destination = 2
 [node name="Rail3" type="Path2D" parent="tracks" unique_id=304619894]
 curve = SubResource("Curve2D_h8pal")
 script = ExtResource("2_5qwrs")
+active = false
 arrow_spacing = 40.0
 color = Color(0.345, 0.423, 0.793, 1)
 metadata/_custom_type_script = "uid://cuym172wt4qwo"
@@ -125,7 +126,6 @@ speed = 150
 [node name="Rail4" type="Path2D" parent="tracks" unique_id=875992632]
 curve = SubResource("Curve2D_ju8f6")
 script = ExtResource("2_5qwrs")
-active = false
 arrow_spacing = 40.0
 color = Color(0.345, 0.423, 0.793, 1)
 id = 2
@@ -134,6 +134,7 @@ metadata/_custom_type_script = "uid://cuym172wt4qwo"
 [node name="Junction" type="Node2D" parent="tracks" unique_id=284340649 node_paths=PackedStringArray("rails")]
 position = Vector2(580, 495)
 script = ExtResource("6_ju8f6")
+rail_index = 1
 rails = [NodePath("../Rail3"), NodePath("../Rail4")]
 metadata/_custom_type_script = "uid://dp8ggqt5j2ynj"
 

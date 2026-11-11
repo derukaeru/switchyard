@@ -4,10 +4,10 @@ class_name Junction extends Node2D
 signal switched(rail_index: int)
 @onready var sprite: Sprite2D = Sprite2D.new()
 
+@export var rail_index: int = 0
 @export var color: Color = Color("586ccaff")
 
 @export var rails: Array[Rail] = []
-@export var rail_index: int = 0
 
 func _ready() -> void:
 	for rail in rails:

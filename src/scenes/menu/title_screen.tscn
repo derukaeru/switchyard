@@ -1,8 +1,10 @@
 [gd_scene format=3 uid="uid://dix67ojrdr6ht"]
 
 [ext_resource type="Script" uid="uid://cuym172wt4qwo" path="res://src/scripts/components/rail.gd" id="1_fbi7p"]
+[ext_resource type="Script" uid="uid://buax23vac2h4r" path="res://src/scenes/menu/title_screen.gd" id="1_wf6w8"]
 [ext_resource type="PackedScene" uid="uid://cbe6816t855is" path="res://src/scenes/objects/train.tscn" id="2_4v2w5"]
 [ext_resource type="FontFile" uid="uid://lcay2652jc6e" path="res://src/assets/fonts/Helvetica.ttf" id="3_g66e4"]
+[ext_resource type="PackedScene" uid="uid://c2gpi2uolkm8v" path="res://src/scenes/menu/settings_screen.tscn" id="5_n2vqt"]
 
 [sub_resource type="Curve2D" id="Curve2D_4v2w5"]
 _data = {
@@ -25,7 +27,15 @@ point_count = 2
 [sub_resource type="LabelSettings" id="LabelSettings_37oxp"]
 font = ExtResource("3_g66e4")
 font_size = 100
-font_color = Color(0.45080003, 0.65412, 0.92, 1)
+font_color = Color(0.08379073, 0.22355413, 0.3977342, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_t4a08"]
+bg_color = Color(0.6, 0.6, 0.6, 0.22352941)
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_g66e4"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_wf6w8"]
+bg_color = Color(0.09, 0.09, 0.09, 0.1764706)
 
 [node name="title_screen" type="Control" unique_id=198211424]
 layout_mode = 3
@@ -34,6 +44,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_wf6w8")
 
 [node name="background" type="ColorRect" parent="." unique_id=618075438]
 layout_mode = 1
@@ -42,7 +53,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-color = Color(0.85, 0.811325, 0.6715, 1)
+color = Color(0.88566834, 0.8533201, 0.7361515, 1)
 
 [node name="tracks" type="Node2D" parent="." unique_id=1520141011]
 
@@ -100,7 +111,45 @@ label_settings = SubResource("LabelSettings_37oxp")
 
 [node name="menu" type="VBoxContainer" parent="." unique_id=569138004]
 layout_mode = 0
-offset_left = 59.0
-offset_top = 677.0
-offset_right = 335.0
-offset_bottom = 931.0
+offset_left = 49.0
+offset_top = 723.0
+offset_right = 444.0
+offset_bottom = 920.0
+
+[node name="start" type="Button" parent="menu" unique_id=1611042198]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_colors/font_color = Color(0.08984902, 0.15018797, 0.34997687, 1)
+theme_override_font_sizes/font_size = 32
+theme_override_styles/normal = SubResource("StyleBoxFlat_t4a08")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_g66e4")
+theme_override_styles/hover = SubResource("StyleBoxFlat_wf6w8")
+text = "start"
+
+[node name="settings" type="Button" parent="menu" unique_id=1022983600]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_colors/font_color = Color(0.08984902, 0.15018797, 0.34997687, 1)
+theme_override_font_sizes/font_size = 32
+theme_override_styles/normal = SubResource("StyleBoxFlat_t4a08")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_g66e4")
+theme_override_styles/hover = SubResource("StyleBoxFlat_wf6w8")
+text = "settings"
+
+[node name="exit" type="Button" parent="menu" unique_id=338322182]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_colors/font_color = Color(0.08984902, 0.15018797, 0.34997687, 1)
+theme_override_font_sizes/font_size = 32
+theme_override_styles/normal = SubResource("StyleBoxFlat_t4a08")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_g66e4")
+theme_override_styles/hover = SubResource("StyleBoxFlat_wf6w8")
+text = "exit"
+
+[node name="settings_screen" parent="." unique_id=2071994269 instance=ExtResource("5_n2vqt")]
+visible = false
+layout_mode = 1
+
+[connection signal="pressed" from="menu/start" to="." method="_on_start_pressed"]
+[connection signal="pressed" from="menu/settings" to="." method="_on_settings_pressed"]
+[connection signal="pressed" from="menu/exit" to="." method="_on_exit_pressed"]
