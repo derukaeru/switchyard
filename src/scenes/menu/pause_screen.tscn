@@ -27,10 +27,10 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -184.0
-offset_top = -70.0
-offset_right = 184.0
-offset_bottom = 70.0
+offset_left = -313.0
+offset_top = -147.5
+offset_right = 313.0
+offset_bottom = 147.5
 grow_horizontal = 2
 grow_vertical = 2
 size_flags_vertical = 3
@@ -38,16 +38,19 @@ size_flags_vertical = 3
 [node name="resume" type="Button" parent="VBoxContainer" unique_id=1698791073]
 layout_mode = 2
 size_flags_vertical = 3
+theme_override_font_sizes/font_size = 32
 text = "resume"
 
 [node name="settings" type="Button" parent="VBoxContainer" unique_id=640017073]
 layout_mode = 2
 size_flags_vertical = 3
+theme_override_font_sizes/font_size = 32
 text = "settings"
 
 [node name="exit" type="Button" parent="VBoxContainer" unique_id=1152742921]
 layout_mode = 2
 size_flags_vertical = 3
+theme_override_font_sizes/font_size = 32
 text = "exit"
 
 [connection signal="pressed" from="VBoxContainer/resume" to="." method="_on_resume_pressed"]

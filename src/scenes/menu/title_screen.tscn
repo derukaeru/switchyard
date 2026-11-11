@@ -18,7 +18,7 @@ point_count = 4
 
 [sub_resource type="Curve2D" id="Curve2D_wf6w8"]
 _data = {
-"points": PackedVector2Array(0, 0, 0, 0, 896, -57, 0, 0, 0, 0, 896, 944)
+"points": PackedVector2Array(0, 0, 0, 0, 896, -57, 0, 0, 0, 0, 896, 1096)
 }
 point_count = 2
 
@@ -42,14 +42,15 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-color = Color(0.88, 0.8635733, 0.8096, 1)
+color = Color(0.85, 0.811325, 0.6715, 1)
 
 [node name="tracks" type="Node2D" parent="." unique_id=1520141011]
 
 [node name="Rail2" type="Path2D" parent="tracks" unique_id=1763810876]
 curve = SubResource("Curve2D_4v2w5")
 script = ExtResource("1_fbi7p")
-rail_color = Color(0.2922, 0.6, 0.276, 0.78431374)
+active = false
+design_rail = true
 metadata/_custom_type_script = "uid://cuym172wt4qwo"
 
 [node name="train" parent="tracks/Rail2" unique_id=1286344413 instance=ExtResource("2_4v2w5")]
@@ -61,7 +62,7 @@ looping = true
 [node name="Rail" type="Path2D" parent="tracks" unique_id=589983742]
 curve = SubResource("Curve2D_g66e4")
 script = ExtResource("1_fbi7p")
-rail_color = Color(0.3476, 0.4287066, 0.79, 0.78431374)
+design_rail = true
 metadata/_custom_type_script = "uid://cuym172wt4qwo"
 
 [node name="train" parent="tracks/Rail" unique_id=1929194134 instance=ExtResource("2_4v2w5")]
@@ -78,7 +79,8 @@ looping = true
 [node name="Rail3" type="Path2D" parent="tracks" unique_id=1074049343]
 curve = SubResource("Curve2D_wf6w8")
 script = ExtResource("1_fbi7p")
-rail_color = Color(0.28457642, 0.48288983, 0.63488543, 0.78431374)
+active = false
+design_rail = true
 metadata/_custom_type_script = "uid://cuym172wt4qwo"
 
 [node name="train" parent="tracks/Rail3" unique_id=463352434 instance=ExtResource("2_4v2w5")]
@@ -89,9 +91,16 @@ looping = true
 
 [node name="title" type="Label" parent="." unique_id=167698055]
 layout_mode = 0
-offset_left = 199.0
-offset_top = 249.0
-offset_right = 671.0
-offset_bottom = 396.0
+offset_left = 276.0
+offset_top = 172.0
+offset_right = 748.0
+offset_bottom = 319.0
 text = "switchyard"
 label_settings = SubResource("LabelSettings_37oxp")
+
+[node name="menu" type="VBoxContainer" parent="." unique_id=569138004]
+layout_mode = 0
+offset_left = 59.0
+offset_top = 677.0
+offset_right = 335.0
+offset_bottom = 931.0

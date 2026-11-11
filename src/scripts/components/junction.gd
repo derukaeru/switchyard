@@ -14,7 +14,7 @@ func _ready() -> void:
 		rail.active = false
 	
 	rails[rail_index].active = true
-	sprite.texture = load("res://icon.svg")
+	sprite.texture = load("res://src/assets/sprites/objects/junction.png")
 	add_child(sprite)
 
 func switch_track() -> void:

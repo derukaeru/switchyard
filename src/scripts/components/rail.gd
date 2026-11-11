@@ -4,6 +4,8 @@ class_name Rail extends Path2D
 @export var end_junction: Junction
 @export var active: bool = true
 
+@export var design_rail: bool = false
+
 @export var arrow_spacing: float = 120.0
 @export var arrow_size: float = 6.0
 
@@ -32,7 +34,7 @@ func _draw() -> void:
 	
 	var length: float = curve.get_baked_length()
 
-	for distance in range(32, int(length), 64):
+	for distance in range(48, int(length), 64):
 		var point: Vector2 = curve.sample_baked(distance)
 		var prev_point: Vector2 = curve.sample_baked(distance - 2.0)
 		

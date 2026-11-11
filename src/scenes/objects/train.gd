@@ -12,15 +12,16 @@ class_name Train extends PathFollow2D
 @export var looping: bool = false
 @export var rotation_speed: float = 5.0
 
-var last_position: Vector2
+var arrived_at: bool = false
 
 func _ready() -> void:
 	cab.color = color
 	loop = looping
-	
-	last_position = global_position
 
-func _process(delta: float) -> void: 
+func _process(delta: float) -> void:
+	particles.global_rotation = 0.0
+	if arrived_at: return
+	
 	var rail: Rail = get_parent() as Rail
 	var length: float = rail.curve.get_baked_length()
 	var target: float = progress + speed * delta
@@ -39,10 +40,17 @@ func _process(delta: float) -> void:
 	progress = target - length
 
 func arrived() -> void:
+	if get_parent().design_rail:
+		progress = 0.0
+		return
+	
 	if get_parent().id == destination:
 		EventManager.train_correct.emit()
 	else:
 		EventManager.train_wrong.emit()
 	
+	arrived_at = true
 	particles.emitting = false
-	set_process(false)
+	
+	await particles.finished
+	queue_free()

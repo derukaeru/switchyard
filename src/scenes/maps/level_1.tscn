@@ -98,6 +98,7 @@ metadata/_custom_type_script = "uid://cuym172wt4qwo"
 [node name="train" parent="tracks/Rail" unique_id=1286344413 instance=ExtResource("1_pfttx")]
 position = Vector2(580, -300)
 rotation = 1.5707964
+color = Color(0.9372549, 0.5058824, 0.34509805, 1)
 destination = 2
 
 [node name="Rail3" type="Path2D" parent="tracks" unique_id=304619894]
@@ -118,11 +119,13 @@ metadata/_custom_type_script = "uid://cuym172wt4qwo"
 
 [node name="train" parent="tracks/Rail2" unique_id=86710733 instance=ExtResource("1_pfttx")]
 position = Vector2(-300, 400)
+color = Color(0.56078434, 0.69411767, 0.15686275, 1)
 speed = 150
 
 [node name="Rail4" type="Path2D" parent="tracks" unique_id=875992632]
 curve = SubResource("Curve2D_ju8f6")
 script = ExtResource("2_5qwrs")
+active = false
 arrow_spacing = 40.0
 color = Color(0.345, 0.423, 0.793, 1)
 id = 2
@@ -147,3 +150,19 @@ anchors_preset = 0
 offset_right = 1152.0
 offset_bottom = 904.0
 mouse_filter = 2
+
+[node name="ColorRect" type="ColorRect" parent="markings" unique_id=1172231319]
+layout_mode = 0
+offset_left = 1195.0
+offset_top = 539.0
+offset_right = 1235.0
+offset_bottom = 590.0
+color = Color(0.93561345, 0.5073778, 0.34489736, 1)
+
+[node name="ColorRect2" type="ColorRect" parent="markings" unique_id=461671787]
+layout_mode = 0
+offset_left = 556.0
+offset_top = 949.0
+offset_right = 604.0
+offset_bottom = 989.0
+color = Color(0.56245726, 0.6942783, 0.15821618, 1)
