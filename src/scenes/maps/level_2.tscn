@@ -1,8 +1,70 @@
 [gd_scene format=3 uid="uid://c1ym5g1bxpeyb"]
 
 [ext_resource type="Script" uid="uid://ch6awljrbtrrn" path="res://src/scenes/maps/level_2.gd" id="1_hsvua"]
+[ext_resource type="Script" uid="uid://cuym172wt4qwo" path="res://src/scripts/components/rail.gd" id="2_46jx7"]
+
+[sub_resource type="Curve2D" id="Curve2D_q0huv"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 246, -39, 0, 0, 0, 0, 246, 430)
+}
+point_count = 2
+
+[sub_resource type="Curve2D" id="Curve2D_iaies"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, -215, 430, 0, 0, 0, 0, 1442, 430)
+}
+point_count = 2
+
+[sub_resource type="Curve2D" id="Curve2D_y3xyo"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 816, 430, 0, 0, 0, 0, 816, 1083)
+}
+point_count = 2
 
 [node name="level_2" type="Node2D" unique_id=1182047937]
 script = ExtResource("1_hsvua")
 
-[node name="tracks" type="Node2D" parent="." unique_id=574997686]
+[node name="background" type="Control" parent="." unique_id=488003607]
+layout_mode = 3
+anchors_preset = 0
+offset_left = -111.0
+offset_top = -60.0
+offset_right = 1229.0
+offset_bottom = 961.0
+
+[node name="ColorRect" type="ColorRect" parent="background" unique_id=1805245987]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0780001
+anchor_bottom = 1.0860001
+offset_right = 0.4798584
+offset_bottom = 0.19396973
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.85, 0.83115834, 0.79050004, 1)
+
+[node name="tracks" type="Node2D" parent="." unique_id=1200466026]
+
+[node name="Rail" type="Path2D" parent="tracks" unique_id=2146746643]
+curve = SubResource("Curve2D_q0huv")
+script = ExtResource("2_46jx7")
+metadata/_custom_type_script = "uid://cuym172wt4qwo"
+
+[node name="Rail2" type="Path2D" parent="tracks" unique_id=1164246370]
+curve = SubResource("Curve2D_iaies")
+script = ExtResource("2_46jx7")
+metadata/_custom_type_script = "uid://cuym172wt4qwo"
+
+[node name="Rail3" type="Path2D" parent="tracks" unique_id=1027001105]
+curve = SubResource("Curve2D_y3xyo")
+script = ExtResource("2_46jx7")
+metadata/_custom_type_script = "uid://cuym172wt4qwo"
+
+[node name="markings" type="Control" parent="." unique_id=1991863110]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2

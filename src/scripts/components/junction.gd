@@ -13,7 +13,9 @@ func _ready() -> void:
 	for rail in rails:
 		rail.active = false
 	
-	rails[rail_index].active = true
+	if rails.size() >= 1:
+		rails[rail_index].active = true
+	
 	sprite.texture = load("res://src/assets/sprites/objects/junction.png")
 	add_child(sprite)
 

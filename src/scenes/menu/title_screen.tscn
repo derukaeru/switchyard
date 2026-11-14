@@ -4,7 +4,9 @@
 [ext_resource type="Script" uid="uid://buax23vac2h4r" path="res://src/scenes/menu/title_screen.gd" id="1_wf6w8"]
 [ext_resource type="PackedScene" uid="uid://cbe6816t855is" path="res://src/scenes/objects/train.tscn" id="2_4v2w5"]
 [ext_resource type="FontFile" uid="uid://lcay2652jc6e" path="res://src/assets/fonts/Helvetica.ttf" id="3_g66e4"]
+[ext_resource type="Script" uid="uid://dp8ggqt5j2ynj" path="res://src/scripts/components/junction.gd" id="4_7e5sh"]
 [ext_resource type="PackedScene" uid="uid://c2gpi2uolkm8v" path="res://src/scenes/menu/settings_screen.tscn" id="5_n2vqt"]
+[ext_resource type="PackedScene" uid="uid://cdcvig5bgwcng" path="res://src/scenes/menu/level_screen.tscn" id="7_11h5q"]
 
 [sub_resource type="Curve2D" id="Curve2D_4v2w5"]
 _data = {
@@ -100,6 +102,16 @@ rotation = 1.5707964
 speed = 200
 looping = true
 
+[node name="Junction" type="Node2D" parent="tracks" unique_id=827849328]
+position = Vector2(182, 356)
+script = ExtResource("4_7e5sh")
+metadata/_custom_type_script = "uid://dp8ggqt5j2ynj"
+
+[node name="Junction2" type="Node2D" parent="tracks" unique_id=1803688699]
+position = Vector2(896, 443)
+script = ExtResource("4_7e5sh")
+metadata/_custom_type_script = "uid://dp8ggqt5j2ynj"
+
 [node name="title" type="Label" parent="." unique_id=167698055]
 layout_mode = 0
 offset_left = 276.0
@@ -148,6 +160,12 @@ text = "exit"
 
 [node name="settings_screen" parent="." unique_id=2071994269 instance=ExtResource("5_n2vqt")]
 visible = false
+z_index = 1
+layout_mode = 1
+
+[node name="level_screen" parent="." unique_id=1221292349 instance=ExtResource("7_11h5q")]
+visible = false
+z_index = 1
 layout_mode = 1
 
 [connection signal="pressed" from="menu/start" to="." method="_on_start_pressed"]

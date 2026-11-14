@@ -3,6 +3,7 @@
 [ext_resource type="Script" uid="uid://cnm7exu6dxwy2" path="res://src/scenes/menu/end_screen.gd" id="1_r0b24"]
 
 [node name="end_screen" type="Control" unique_id=64438037]
+z_index = 5
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -10,3 +11,12 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_r0b24")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=1680698597]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.92911506, 0.86576927, 0.81081593, 1)

@@ -22,5 +22,6 @@ func update_trains() -> void:
 		# calculate amount of incorrects
 		pass
 	else:
-		GameManager.end_screen()
 		pass
+	
+	GameManager.end_game()

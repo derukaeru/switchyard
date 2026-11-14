@@ -52,39 +52,6 @@ grow_horizontal = 2
 grow_vertical = 2
 color = Color(0.85, 0.83115834, 0.79050004, 1)
 
-[node name="design" type="Control" parent="." unique_id=1328348039]
-visible = false
-layout_mode = 3
-anchors_preset = 0
-offset_right = 40.0
-offset_bottom = 40.0
-mouse_filter = 2
-
-[node name="ColorRect" type="ColorRect" parent="design" unique_id=1001351147]
-layout_mode = 0
-offset_left = 20.0
-offset_top = 29.0
-offset_right = 550.0
-offset_bottom = 368.0
-color = Color(0.71, 0.51534164, 0.46149996, 1)
-
-[node name="ColorRect2" type="ColorRect" parent="design" unique_id=1461033340]
-layout_mode = 0
-offset_left = 333.0
-offset_top = 228.0
-offset_right = 626.6283
-offset_bottom = 348.0
-rotation = 0.38737202
-color = Color(0.71, 0.51534164, 0.46149996, 1)
-
-[node name="ColorRect3" type="ColorRect" parent="design" unique_id=1182069090]
-layout_mode = 0
-offset_left = 550.0
-offset_top = 221.99998
-offset_right = 608.0
-offset_bottom = 465.0
-color = Color(0.8509804, 0.83137256, 0.7921569, 1)
-
 [node name="tracks" type="Node2D" parent="." unique_id=755398829]
 
 [node name="Rail" type="Path2D" parent="tracks" unique_id=2118364005 node_paths=PackedStringArray("end_junction")]
@@ -92,7 +59,7 @@ curve = SubResource("Curve2D_m0mif")
 script = ExtResource("2_5qwrs")
 end_junction = NodePath("../Junction")
 arrow_spacing = 40.0
-color = Color(0.345, 0.423, 0.793, 1)
+color = Color(0.30817774, 0.5203982, 0.27955627, 1)
 metadata/_custom_type_script = "uid://cuym172wt4qwo"
 
 [node name="train" parent="tracks/Rail" unique_id=1286344413 instance=ExtResource("1_pfttx")]
@@ -106,7 +73,7 @@ curve = SubResource("Curve2D_h8pal")
 script = ExtResource("2_5qwrs")
 active = false
 arrow_spacing = 40.0
-color = Color(0.345, 0.423, 0.793, 1)
+color = Color(0.33333334, 0.5529412, 0.29803923, 1)
 metadata/_custom_type_script = "uid://cuym172wt4qwo"
 
 [node name="Rail2" type="Path2D" parent="tracks" unique_id=609968600 node_paths=PackedStringArray("end_junction")]
