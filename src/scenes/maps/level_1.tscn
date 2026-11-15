@@ -14,7 +14,7 @@ point_count = 2
 
 [sub_resource type="Curve2D" id="Curve2D_h8pal"]
 _data = {
-"points": PackedVector2Array(0, 0, 0, 0, 580, 495, 0, 0, 0, 0, 580, 1051)
+"points": PackedVector2Array(0, 0, 0, 0, 580, 495, 0, 0, 0, 0, 580, 1005)
 }
 point_count = 2
 
@@ -26,7 +26,7 @@ point_count = 3
 
 [sub_resource type="Curve2D" id="Curve2D_ju8f6"]
 _data = {
-"points": PackedVector2Array(0, 0, 0, 0, 573, 492, 0, 0, 0, 0, 747, 565, 0, 0, 0, 0, 1371, 566)
+"points": PackedVector2Array(0, 0, 0, 0, 573, 492, 0, 0, 0, 0, 747, 565, 0, 0, 0, 0, 1265, 565)
 }
 point_count = 3
 
@@ -111,10 +111,9 @@ offset_bottom = 609.0
 junction = NodePath("../Junction")
 
 [node name="markings" type="Control" parent="." unique_id=1504437887]
+z_index = 1
 layout_mode = 3
 anchors_preset = 0
-offset_right = 1152.0
-offset_bottom = 904.0
 mouse_filter = 2
 
 [node name="ColorRect" type="ColorRect" parent="markings" unique_id=1172231319]

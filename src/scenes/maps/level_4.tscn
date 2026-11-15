@@ -1,8 +1,32 @@
 [gd_scene format=3 uid="uid://8hvm6to8ikt6"]
 
-[ext_resource type="Script" uid="uid://bbmm47er23f1p" path="res://src/scenes/maps/level_4.gd" id="1_skg6t"]
+[ext_resource type="Script" uid="uid://dyiitrgmhhcml" path="res://src/scenes/maps/level.gd" id="1_skg6t"]
 
 [node name="level_4" type="Node2D" unique_id=416987576]
 script = ExtResource("1_skg6t")
 
+[node name="background" type="Control" parent="." unique_id=2034737977]
+layout_mode = 3
+anchors_preset = 0
+offset_left = -111.0
+offset_top = -60.0
+offset_right = 1229.0
+offset_bottom = 961.0
+
+[node name="ColorRect" type="ColorRect" parent="background" unique_id=1244416236]
+z_index = 1
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0780001
+anchor_bottom = 1.0860001
+offset_right = 0.4798584
+offset_bottom = 0.19396973
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.85, 0.83115834, 0.79050004, 1)
+
 [node name="tracks" type="Node2D" parent="." unique_id=2098620928]
+
+[node name="markings" type="Control" parent="." unique_id=233085852]
+layout_mode = 3
+anchors_preset = 0

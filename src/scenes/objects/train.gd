@@ -3,6 +3,9 @@ class_name Train extends PathFollow2D
 @onready var cab: ColorRect = $cab
 @onready var particles: GPUParticles2D = $GPUParticles2D
 
+@onready var right_destination: GPUParticles2D = $right_destination
+@onready var wrong_destination: GPUParticles2D = $wrong_destination
+
 @export var color: Color = Color("586ccaff")
 @export var speed: int = 100
 @export var destination: int = 1
@@ -46,8 +49,10 @@ func arrived() -> void:
 	
 	if get_parent().id == destination:
 		EventManager.train_correct.emit()
+		right_destination.emitting = true
 	else:
 		EventManager.train_wrong.emit()
+		wrong_destination.emitting = true
 	
 	arrived_at = true
 	particles.emitting = false

@@ -21,9 +21,9 @@ func update_trains() -> void:
 	if not trains.size() >= train_amount: return
 	
 	if trains.has(false):
-		# calculate amount of incorrects
 		pass
 	else:
 		pass
 	
+	await get_tree().create_timer(2.0).timeout
 	GameManager.end_game()

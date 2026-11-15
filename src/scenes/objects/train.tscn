@@ -27,6 +27,63 @@ scale_max = 24.0
 color_initial_ramp = SubResource("GradientTexture1D_3mrl3")
 alpha_curve = SubResource("CurveTexture_k4sen")
 
+[sub_resource type="Curve" id="Curve_3mrl3"]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(1, 0.22471917), -1.3205552, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="CurveTexture" id="CurveTexture_q7w54"]
+curve = SubResource("Curve_3mrl3")
+
+[sub_resource type="Gradient" id="Gradient_eae4g"]
+offsets = PackedFloat32Array(0, 0.52459013, 1)
+colors = PackedColorArray(0.38293648, 0.7761465, 0.21244928, 1, 0.94, 0.87608004, 0.3008, 1, 0.38868177, 0.63913345, 0.33875138, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_w147l"]
+gradient = SubResource("Gradient_eae4g")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_t4a08"]
+particle_flag_disable_z = true
+angle_min = -77.399994
+angle_max = 69.70001
+direction = Vector3(0, 0, 0)
+spread = 180.0
+initial_velocity_min = 60.0
+initial_velocity_max = 100.0
+angular_velocity_min = -30.970015
+angular_velocity_max = 100.639984
+gravity = Vector3(0, 5, 0)
+scale_min = 5.0
+scale_max = 10.0
+color_initial_ramp = SubResource("GradientTexture1D_w147l")
+alpha_curve = SubResource("CurveTexture_q7w54")
+
+[sub_resource type="Curve" id="Curve_k4sen"]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), -2.4943829, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="CurveTexture" id="CurveTexture_3mrl3"]
+curve = SubResource("Curve_k4sen")
+
+[sub_resource type="Gradient" id="Gradient_q7w54"]
+colors = PackedColorArray(0.9387819, 0.22394577, 0.21484765, 1, 0.36357248, 0.11305309, 0.08658544, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_k4sen"]
+gradient = SubResource("Gradient_q7w54")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_3mrl3"]
+particle_flag_disable_z = true
+direction = Vector3(0, 0, 0)
+spread = 180.0
+initial_velocity_min = 6.23
+initial_velocity_max = 70.0
+angular_velocity_min = -77.42001
+angular_velocity_max = 100.639984
+gravity = Vector3(0, 0, 0)
+scale_min = 6.3799996
+scale_max = 17.13
+color_initial_ramp = SubResource("GradientTexture1D_k4sen")
+alpha_curve = SubResource("CurveTexture_3mrl3")
+
 [node name="train" type="PathFollow2D" unique_id=1286344413]
 z_index = 1
 script = ExtResource("1_3mrl3")
@@ -52,3 +109,21 @@ lifetime = 3.0
 randomness = 1.0
 visibility_rect = Rect2(-1000, -1000, 2000, 2000)
 process_material = SubResource("ParticleProcessMaterial_2yfux")
+
+[node name="right_destination" type="GPUParticles2D" parent="." unique_id=2092311096]
+emitting = false
+amount = 64
+lifetime = 2.0
+one_shot = true
+explosiveness = 0.87
+randomness = 1.0
+process_material = SubResource("ParticleProcessMaterial_t4a08")
+
+[node name="wrong_destination" type="GPUParticles2D" parent="." unique_id=1498359367]
+emitting = false
+amount = 64
+lifetime = 2.0
+one_shot = true
+explosiveness = 0.92
+randomness = 1.0
+process_material = SubResource("ParticleProcessMaterial_3mrl3")
