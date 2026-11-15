@@ -25,9 +25,10 @@ EventManager="*uid://chtwe02g0ctj3"
 
 [display]
 
-window/size/viewport_width=1216
-window/size/viewport_height=968
-window/stretch/mode="viewport"
+window/size/viewport_width=1248
+window/size/viewport_height=984
+window/stretch/mode="canvas_items"
+window/stretch/aspect="expand"
 
 [dotnet]
 
@@ -47,7 +48,6 @@ theme/custom_font="uid://lcay2652jc6e"
 
 [rendering]
 
-textures/canvas_textures/default_texture_filter=0
 rendering_device/driver.windows="d3d12"
 renderer/rendering_method="gl_compatibility"
 renderer/rendering_method.mobile="gl_compatibility"

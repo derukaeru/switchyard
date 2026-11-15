@@ -1,9 +1,11 @@
 extends Node2D
 
-@export var train_amount: int = 2
+@onready var tracks: Node2D = $tracks
+var train_amount: int = 0
 var trains: Array = [] # if they get to the right destination
 
 func _ready() -> void:
+	train_amount = tracks.find_children("*").filter(func(a): return a is Train).size()
 	EventManager.train_correct.connect(train_correct)
 	EventManager.train_wrong.connect(train_wrong)
 

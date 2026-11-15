@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://m8way4bwk7ig"]
 
-[ext_resource type="Script" uid="uid://dyiitrgmhhcml" path="res://src/scenes/maps/level_1.gd" id="1_5qwrs"]
+[ext_resource type="Script" uid="uid://dyiitrgmhhcml" path="res://src/scenes/maps/level.gd" id="1_5qwrs"]
 [ext_resource type="PackedScene" uid="uid://cbe6816t855is" path="res://src/scenes/objects/train.tscn" id="1_pfttx"]
 [ext_resource type="Script" uid="uid://cuym172wt4qwo" path="res://src/scripts/components/rail.gd" id="2_5qwrs"]
 [ext_resource type="PackedScene" uid="uid://ccarek0jljrpr" path="res://src/scenes/objects/switch.tscn" id="5_ju8f6"]
@@ -14,7 +14,7 @@ point_count = 2
 
 [sub_resource type="Curve2D" id="Curve2D_h8pal"]
 _data = {
-"points": PackedVector2Array(0, 0, 0, 0, 580, 495, 0, 0, 0, 0, 580, 1113)
+"points": PackedVector2Array(0, 0, 0, 0, 580, 495, 0, 0, 0, 0, 580, 1051)
 }
 point_count = 2
 
@@ -26,7 +26,7 @@ point_count = 3
 
 [sub_resource type="Curve2D" id="Curve2D_ju8f6"]
 _data = {
-"points": PackedVector2Array(0, 0, 0, 0, 573, 492, 0, 0, 0, 0, 747, 565, 0, 0, 0, 0, 1343, 565)
+"points": PackedVector2Array(0, 0, 0, 0, 573, 492, 0, 0, 0, 0, 747, 565, 0, 0, 0, 0, 1371, 566)
 }
 point_count = 3
 
@@ -46,8 +46,8 @@ layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_right = 27.0
-offset_bottom = 97.0
+offset_right = 154.0
+offset_bottom = 90.0
 grow_horizontal = 2
 grow_vertical = 2
 color = Color(0.85, 0.83115834, 0.79050004, 1)
@@ -59,7 +59,6 @@ curve = SubResource("Curve2D_m0mif")
 script = ExtResource("2_5qwrs")
 end_junction = NodePath("../Junction")
 arrow_spacing = 40.0
-color = Color(0.30817774, 0.5203982, 0.27955627, 1)
 metadata/_custom_type_script = "uid://cuym172wt4qwo"
 
 [node name="train" parent="tracks/Rail" unique_id=1286344413 instance=ExtResource("1_pfttx")]
@@ -71,9 +70,7 @@ destination = 2
 [node name="Rail3" type="Path2D" parent="tracks" unique_id=304619894]
 curve = SubResource("Curve2D_h8pal")
 script = ExtResource("2_5qwrs")
-active = false
 arrow_spacing = 40.0
-color = Color(0.33333334, 0.5529412, 0.29803923, 1)
 metadata/_custom_type_script = "uid://cuym172wt4qwo"
 
 [node name="Rail2" type="Path2D" parent="tracks" unique_id=609968600 node_paths=PackedStringArray("end_junction")]
@@ -93,6 +90,7 @@ speed = 150
 [node name="Rail4" type="Path2D" parent="tracks" unique_id=875992632]
 curve = SubResource("Curve2D_ju8f6")
 script = ExtResource("2_5qwrs")
+active = true
 arrow_spacing = 40.0
 color = Color(0.345, 0.423, 0.793, 1)
 id = 2
@@ -106,10 +104,10 @@ rails = [NodePath("../Rail3"), NodePath("../Rail4")]
 metadata/_custom_type_script = "uid://dp8ggqt5j2ynj"
 
 [node name="switch" parent="tracks" unique_id=1893497379 node_paths=PackedStringArray("junction") instance=ExtResource("5_ju8f6")]
-offset_left = 590.0
-offset_top = 524.0
-offset_right = 638.0
-offset_bottom = 572.0
+offset_left = 611.0
+offset_top = 561.0
+offset_right = 659.0
+offset_bottom = 609.0
 junction = NodePath("../Junction")
 
 [node name="markings" type="Control" parent="." unique_id=1504437887]
@@ -121,16 +119,16 @@ mouse_filter = 2
 
 [node name="ColorRect" type="ColorRect" parent="markings" unique_id=1172231319]
 layout_mode = 0
-offset_left = 1195.0
+offset_left = 1227.0
 offset_top = 539.0
-offset_right = 1235.0
+offset_right = 1267.0
 offset_bottom = 590.0
 color = Color(0.93561345, 0.5073778, 0.34489736, 1)
 
 [node name="ColorRect2" type="ColorRect" parent="markings" unique_id=461671787]
 layout_mode = 0
 offset_left = 556.0
-offset_top = 949.0
+offset_top = 970.0
 offset_right = 604.0
-offset_bottom = 989.0
+offset_bottom = 1010.0
 color = Color(0.56245726, 0.6942783, 0.15821618, 1)

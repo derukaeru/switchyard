@@ -2,7 +2,7 @@
 class_name Rail extends Path2D
 
 @export var end_junction: Junction
-@export var active: bool = true
+@export var active: bool = false
 
 @export var design_rail: bool = false
 
@@ -23,6 +23,7 @@ func _ready() -> void:
 	line.points = curve.get_baked_points()
 	line.width = 12
 	line.default_color = color
+	line.antialiased = true
 
 func get_next_rail() -> Rail:
 	if end_junction == null:
@@ -30,8 +31,7 @@ func get_next_rail() -> Rail:
 	return end_junction.get_active_rail()
 
 func _draw() -> void:
-	if not active or end_junction: return
-	
+	if not active: return
 	var length: float = curve.get_baked_length()
 
 	for distance in range(48, int(length), 64):
@@ -42,8 +42,8 @@ func _draw() -> void:
 		var left_wing: Vector2 = point + dir.rotated(2.5) * head_size
 		var right_wing: Vector2 = point + dir.rotated(-2.5) * head_size
 		
-		draw_line(point, left_wing, color, 6)
-		draw_line(point, right_wing, color, 6)
+		draw_line(point, left_wing, color, 6, true)
+		draw_line(point, right_wing, color, 6, true)
 
 func _process(_delta: float) -> void:
 	queue_redraw()

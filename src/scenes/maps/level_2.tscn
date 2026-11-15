@@ -1,28 +1,49 @@
 [gd_scene format=3 uid="uid://c1ym5g1bxpeyb"]
 
-[ext_resource type="Script" uid="uid://ch6awljrbtrrn" path="res://src/scenes/maps/level_2.gd" id="1_hsvua"]
+[ext_resource type="Script" uid="uid://dyiitrgmhhcml" path="res://src/scenes/maps/level.gd" id="1_y3xyo"]
 [ext_resource type="Script" uid="uid://cuym172wt4qwo" path="res://src/scripts/components/rail.gd" id="2_46jx7"]
+[ext_resource type="Script" uid="uid://dp8ggqt5j2ynj" path="res://src/scripts/components/junction.gd" id="3_q0huv"]
+[ext_resource type="PackedScene" uid="uid://cbe6816t855is" path="res://src/scenes/objects/train.tscn" id="3_y3xyo"]
+[ext_resource type="PackedScene" uid="uid://ccarek0jljrpr" path="res://src/scenes/objects/switch.tscn" id="4_iaies"]
 
 [sub_resource type="Curve2D" id="Curve2D_q0huv"]
 _data = {
-"points": PackedVector2Array(0, 0, 0, 0, 246, -39, 0, 0, 0, 0, 246, 430)
+"points": PackedVector2Array(0, 0, 0, 0, 246, -478, 0, 0, 0, 0, 246, 254, 0, 0, 0, 0, 443, 430)
 }
-point_count = 2
+point_count = 3
 
 [sub_resource type="Curve2D" id="Curve2D_iaies"]
 _data = {
-"points": PackedVector2Array(0, 0, 0, 0, -215, 430, 0, 0, 0, 0, 1442, 430)
+"points": PackedVector2Array(0, 0, 0, 0, -868, 430, 0, 0, 0, 0, 246, 430, 0, 0, 0, 0, 381, 430)
 }
-point_count = 2
+point_count = 3
 
 [sub_resource type="Curve2D" id="Curve2D_y3xyo"]
 _data = {
-"points": PackedVector2Array(0, 0, 0, 0, 816, 430, 0, 0, 0, 0, 816, 1083)
+"points": PackedVector2Array(0, 0, 0, 0, 817, 431, 0, 0, 0, 0, 1060, 719, 0, 0, 0, 0, 1060, 1164)
+}
+point_count = 3
+
+[sub_resource type="Curve2D" id="Curve2D_tcdhq"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 246, 430, 0, 0, 0, 0, 499, 717, 0, 0, 0, 0, 499, 1122)
+}
+point_count = 3
+
+[sub_resource type="Curve2D" id="Curve2D_gdr2f"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 381, 430, 0, 0, 0, 0, 863, 430)
+}
+point_count = 2
+
+[sub_resource type="Curve2D" id="Curve2D_o7fy0"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 863, 430, 0, 0, 0, 0, 1444, 430)
 }
 point_count = 2
 
 [node name="level_2" type="Node2D" unique_id=1182047937]
-script = ExtResource("1_hsvua")
+script = ExtResource("1_y3xyo")
 
 [node name="background" type="Control" parent="." unique_id=488003607]
 layout_mode = 3
@@ -45,20 +66,82 @@ color = Color(0.85, 0.83115834, 0.79050004, 1)
 
 [node name="tracks" type="Node2D" parent="." unique_id=1200466026]
 
-[node name="Rail" type="Path2D" parent="tracks" unique_id=2146746643]
+[node name="Rail" type="Path2D" parent="tracks" unique_id=2146746643 node_paths=PackedStringArray("end_junction")]
+position = Vector2(-62, 0)
 curve = SubResource("Curve2D_q0huv")
 script = ExtResource("2_46jx7")
+end_junction = NodePath("../Junction")
 metadata/_custom_type_script = "uid://cuym172wt4qwo"
 
-[node name="Rail2" type="Path2D" parent="tracks" unique_id=1164246370]
+[node name="train" parent="tracks/Rail" unique_id=1286344413 instance=ExtResource("3_y3xyo")]
+position = Vector2(246, -478)
+rotation = 1.5707964
+color = Color(0.7921569, 0.6156863, 0.05882353, 1)
+
+[node name="train2" parent="tracks/Rail" unique_id=1185813070 instance=ExtResource("3_y3xyo")]
+position = Vector2(246, -198.26106)
+rotation = 1.5707964
+progress = 279.74
+color = Color(0.6627451, 0.4627451, 0.96862745, 1)
+
+[node name="Rail2" type="Path2D" parent="tracks" unique_id=1164246370 node_paths=PackedStringArray("end_junction")]
 curve = SubResource("Curve2D_iaies")
 script = ExtResource("2_46jx7")
+end_junction = NodePath("../Junction")
 metadata/_custom_type_script = "uid://cuym172wt4qwo"
 
+[node name="train" parent="tracks/Rail2" unique_id=1805877261 instance=ExtResource("3_y3xyo")]
+position = Vector2(-868, 430)
+color = Color(0.13725491, 0.7882353, 0.81960785, 1)
+
 [node name="Rail3" type="Path2D" parent="tracks" unique_id=1027001105]
+position = Vector2(47, 0)
 curve = SubResource("Curve2D_y3xyo")
 script = ExtResource("2_46jx7")
 metadata/_custom_type_script = "uid://cuym172wt4qwo"
+
+[node name="Rail4" type="Path2D" parent="tracks" unique_id=309173226]
+position = Vector2(134, 0)
+curve = SubResource("Curve2D_tcdhq")
+script = ExtResource("2_46jx7")
+metadata/_custom_type_script = "uid://cuym172wt4qwo"
+
+[node name="Junction" type="Node2D" parent="tracks" unique_id=1513619617 node_paths=PackedStringArray("rails")]
+position = Vector2(381, 430)
+script = ExtResource("3_q0huv")
+rails = [NodePath("../Rail5"), NodePath("../Rail4")]
+metadata/_custom_type_script = "uid://dp8ggqt5j2ynj"
+
+[node name="Junction2" type="Node2D" parent="tracks" unique_id=1907078816 node_paths=PackedStringArray("rails")]
+position = Vector2(863, 430)
+script = ExtResource("3_q0huv")
+rails = [NodePath("../Rail6"), NodePath("../Rail3")]
+metadata/_custom_type_script = "uid://dp8ggqt5j2ynj"
+
+[node name="Rail5" type="Path2D" parent="tracks" unique_id=1250434206 node_paths=PackedStringArray("end_junction")]
+curve = SubResource("Curve2D_gdr2f")
+script = ExtResource("2_46jx7")
+end_junction = NodePath("../Junction2")
+metadata/_custom_type_script = "uid://cuym172wt4qwo"
+
+[node name="Rail6" type="Path2D" parent="tracks" unique_id=661712601]
+curve = SubResource("Curve2D_o7fy0")
+script = ExtResource("2_46jx7")
+metadata/_custom_type_script = "uid://cuym172wt4qwo"
+
+[node name="switch" parent="tracks" unique_id=831432752 node_paths=PackedStringArray("junction") instance=ExtResource("4_iaies")]
+offset_left = 329.0
+offset_top = 462.0
+offset_right = 377.0
+offset_bottom = 510.0
+junction = NodePath("../Junction")
+
+[node name="switch2" parent="tracks" unique_id=1496789002 node_paths=PackedStringArray("junction") instance=ExtResource("4_iaies")]
+offset_left = 810.0
+offset_top = 462.0
+offset_right = 858.0
+offset_bottom = 510.0
+junction = NodePath("../Junction2")
 
 [node name="markings" type="Control" parent="." unique_id=1991863110]
 layout_mode = 3
@@ -68,3 +151,27 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
+
+[node name="ColorRect" type="ColorRect" parent="markings" unique_id=1173917174]
+layout_mode = 0
+offset_left = 612.0
+offset_top = 964.0
+offset_right = 652.0
+offset_bottom = 1004.0
+color = Color(0.7936494, 0.6142681, 0.058029667, 1)
+
+[node name="ColorRect2" type="ColorRect" parent="markings" unique_id=1684978821]
+layout_mode = 0
+offset_left = 1221.0
+offset_top = 410.0
+offset_right = 1261.0
+offset_bottom = 450.0
+color = Color(0.1375058, 0.7868818, 0.82085603, 1)
+
+[node name="ColorRect3" type="ColorRect" parent="markings" unique_id=203527616]
+layout_mode = 0
+offset_left = 1087.0
+offset_top = 963.0
+offset_right = 1127.0
+offset_bottom = 1003.0
+color = Color(0.662168, 0.46179664, 0.9698146, 1)
