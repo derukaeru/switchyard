@@ -11,5 +11,8 @@ var UID: Dictionary = {
 	"level_3": "uid://dmrnwl4doue6i",
 	"level_4": "uid://8hvm6to8ikt6",
 	"level_5": "uid://brh1827u25137",
-	"level_6": ""
+	"level_6": "",
+	
+	"switch": "uid://captwa1xgd07c",
+	"switch_flipped": "uid://dosbw4euaehl0",
 }

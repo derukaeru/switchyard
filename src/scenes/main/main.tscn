@@ -4,3 +4,7 @@
 
 [node name="main" type="Node2D" unique_id=34602153]
 script = ExtResource("1_hsw67")
+
+[node name="AudioListener2D" type="AudioListener2D" parent="." unique_id=1375129980]
+position = Vector2(649, 470)
+current = true

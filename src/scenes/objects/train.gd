@@ -6,6 +6,8 @@ class_name Train extends PathFollow2D
 @onready var right_destination: GPUParticles2D = $right_destination
 @onready var wrong_destination: GPUParticles2D = $wrong_destination
 
+@onready var audio: AudioStreamPlayer2D = $AudioStreamPlayer2D
+
 @export var color: Color = Color("586ccaff")
 @export var speed: int = 100
 @export var destination: int = 1
@@ -20,6 +22,8 @@ var arrived_at: bool = false
 func _ready() -> void:
 	cab.color = color
 	loop = looping
+	
+	audio.play()
 
 func _process(delta: float) -> void:
 	particles.global_rotation = 0.0
@@ -56,6 +60,8 @@ func arrived() -> void:
 	
 	arrived_at = true
 	particles.emitting = false
+	
+	audio.stop()
 	
 	await particles.finished
 	queue_free()
