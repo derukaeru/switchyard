@@ -23,7 +23,8 @@ func update_trains() -> void:
 	if trains.has(false):
 		pass
 	else:
-		pass
+		GameManager.locked_levels[GameManager.level - 1] = false
+		GameManager.level += 1
 	
 	await get_tree().create_timer(2.0).timeout
 	GameManager.end_game()

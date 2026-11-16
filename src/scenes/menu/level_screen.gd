@@ -1,8 +1,10 @@
 extends Control
 
 @onready var levels: GridContainer = $levels
+@onready var animation: AnimationPlayer = $AnimationPlayer
 
 func open() -> void:
+	animation.play("open")
 	show()
 	
 	var levels_child: Array[Node] = levels.get_children()
@@ -10,6 +12,8 @@ func open() -> void:
 		levels_child[i].disabled = GameManager.locked_levels[i]
 
 func _on_exit_pressed() -> void:
+	animation.play_backwards("open")
+	await animation.animation_finished
 	hide()
 
 func pick_level(level: int) -> void:

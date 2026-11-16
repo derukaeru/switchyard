@@ -10,4 +10,4 @@ func _ready() -> void:
 	end_screen.hide()
 
 func end_game() -> void:
-	end_screen.show()
+	end_screen.open()

@@ -3,20 +3,19 @@
 [ext_resource type="Script" uid="uid://cuym172wt4qwo" path="res://src/scripts/components/rail.gd" id="1_fbi7p"]
 [ext_resource type="Script" uid="uid://buax23vac2h4r" path="res://src/scenes/menu/title_screen.gd" id="1_wf6w8"]
 [ext_resource type="PackedScene" uid="uid://cbe6816t855is" path="res://src/scenes/objects/train.tscn" id="2_4v2w5"]
-[ext_resource type="FontFile" uid="uid://lcay2652jc6e" path="res://src/assets/fonts/Helvetica.ttf" id="3_g66e4"]
 [ext_resource type="Script" uid="uid://dp8ggqt5j2ynj" path="res://src/scripts/components/junction.gd" id="4_7e5sh"]
 [ext_resource type="PackedScene" uid="uid://c2gpi2uolkm8v" path="res://src/scenes/menu/settings_screen.tscn" id="5_n2vqt"]
 [ext_resource type="PackedScene" uid="uid://cdcvig5bgwcng" path="res://src/scenes/menu/level_screen.tscn" id="7_11h5q"]
 
 [sub_resource type="Curve2D" id="Curve2D_4v2w5"]
 _data = {
-"points": PackedVector2Array(0, 0, 0, 0, -253, 359, 0, 0, 0, 0, 776, 359, 0, 0, 0, 0, 953, 482, 0, 0, 0, 0, 1275, 486)
+"points": PackedVector2Array(0, 0, 0, 0, -253, 359, 0, 0, 0, 0, 776, 359, 0, 0, 0, 0, 953, 482, 0, 0, 0, 0, 1275, 482)
 }
 point_count = 4
 
 [sub_resource type="Curve2D" id="Curve2D_g66e4"]
 _data = {
-"points": PackedVector2Array(0, 0, 0, 0, 183, -34, 0, 0, 0, 0, 181, 510, 0, 0, 0, 0, 755, 775, 0, 0, 0, 0, 760, 1179)
+"points": PackedVector2Array(0, 0, 0, 0, 181, -36, 0, 0, 0, 0, 181, 510, 0, 0, 0, 0, 755, 775, 0, 0, 0, 0, 755, 1079)
 }
 point_count = 4
 
@@ -27,7 +26,6 @@ _data = {
 point_count = 2
 
 [sub_resource type="LabelSettings" id="LabelSettings_37oxp"]
-font = ExtResource("3_g66e4")
 font_size = 80
 font_color = Color(0.25332576, 0.38894075, 0.736352, 1)
 
@@ -49,6 +47,7 @@ grow_vertical = 2
 script = ExtResource("1_wf6w8")
 
 [node name="background" type="ColorRect" parent="." unique_id=618075438]
+texture_filter = 1
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -62,12 +61,12 @@ color = Color(0.88566834, 0.8533201, 0.7361515, 1)
 [node name="Rail2" type="Path2D" parent="tracks" unique_id=1763810876]
 curve = SubResource("Curve2D_4v2w5")
 script = ExtResource("1_fbi7p")
-active = false
 design_rail = true
 metadata/_custom_type_script = "uid://cuym172wt4qwo"
 
 [node name="train" parent="tracks/Rail2" unique_id=1286344413 instance=ExtResource("2_4v2w5")]
 position = Vector2(-253, 359)
+color = Color(0.86517483, 0.33793262, 0.24809965, 1)
 speed = 250
 looping = true
 
@@ -79,12 +78,12 @@ design_rail = true
 metadata/_custom_type_script = "uid://cuym172wt4qwo"
 
 [node name="train" parent="tracks/Rail" unique_id=1929194134 instance=ExtResource("2_4v2w5")]
-position = Vector2(183, -34)
-rotation = 1.5744728
+position = Vector2(181, -36)
+rotation = 1.5707964
 looping = true
 
 [node name="train2" parent="tracks/Rail" unique_id=29049352 instance=ExtResource("2_4v2w5")]
-position = Vector2(535.955, 673.8729)
+position = Vector2(534.1424, 673.0362)
 rotation = 0.43251824
 progress = 934.96
 looping = true
@@ -93,27 +92,28 @@ looping = true
 position = Vector2(211, -9)
 curve = SubResource("Curve2D_wf6w8")
 script = ExtResource("1_fbi7p")
-active = false
 design_rail = true
 metadata/_custom_type_script = "uid://cuym172wt4qwo"
 
 [node name="train" parent="tracks/Rail3" unique_id=463352434 instance=ExtResource("2_4v2w5")]
 position = Vector2(896, -57)
 rotation = 1.5707964
+color = Color(0.38893816, 0.50834054, 0.1098791, 1)
 speed = 200
 looping = true
 
 [node name="Junction" type="Node2D" parent="tracks" unique_id=827849328]
-position = Vector2(182, 356)
+position = Vector2(155, 359)
 script = ExtResource("4_7e5sh")
 metadata/_custom_type_script = "uid://dp8ggqt5j2ynj"
 
 [node name="Junction2" type="Node2D" parent="tracks" unique_id=1803688699]
-position = Vector2(896, 443)
+position = Vector2(1108, 482)
 script = ExtResource("4_7e5sh")
 metadata/_custom_type_script = "uid://dp8ggqt5j2ynj"
 
 [node name="title" type="Label" parent="." unique_id=167698055]
+texture_filter = 1
 layout_mode = 0
 offset_left = 305.0
 offset_top = 251.0
@@ -130,6 +130,7 @@ offset_right = 444.0
 offset_bottom = 920.0
 
 [node name="start" type="Button" parent="menu" unique_id=1611042198]
+texture_filter = 1
 layout_mode = 2
 size_flags_vertical = 3
 theme_override_colors/font_color = Color(0.08984902, 0.15018797, 0.34997687, 1)
@@ -140,6 +141,7 @@ theme_override_styles/hover = SubResource("StyleBoxFlat_wf6w8")
 text = "start"
 
 [node name="settings" type="Button" parent="menu" unique_id=1022983600]
+texture_filter = 1
 layout_mode = 2
 size_flags_vertical = 3
 theme_override_colors/font_color = Color(0.08984902, 0.15018797, 0.34997687, 1)
@@ -150,6 +152,7 @@ theme_override_styles/hover = SubResource("StyleBoxFlat_wf6w8")
 text = "settings"
 
 [node name="exit" type="Button" parent="menu" unique_id=338322182]
+texture_filter = 1
 layout_mode = 2
 size_flags_vertical = 3
 theme_override_colors/font_color = Color(0.08984902, 0.15018797, 0.34997687, 1)

@@ -40,7 +40,7 @@ enabled=PackedStringArray("res://addons/godot_super-wakatime/plugin.cfg")
 
 [gui]
 
-theme/custom_font="uid://lcay2652jc6e"
+theme/custom_font="uid://diliwuitl5hal"
 
 [physics]
 
@@ -48,6 +48,7 @@ theme/custom_font="uid://lcay2652jc6e"
 
 [rendering]
 
+textures/canvas_textures/default_texture_filter=0
 rendering_device/driver.windows="d3d12"
 renderer/rendering_method="gl_compatibility"
 renderer/rendering_method.mobile="gl_compatibility"

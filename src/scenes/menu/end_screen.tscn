@@ -2,6 +2,23 @@
 
 [ext_resource type="Script" uid="uid://cnm7exu6dxwy2" path="res://src/scenes/menu/end_screen.gd" id="1_r0b24"]
 
+[sub_resource type="Animation" id="Animation_r0b24"]
+length = 0.001
+
+[sub_resource type="Animation" id="Animation_bt7cj"]
+resource_name = "open"
+length = 0.4
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_mtfn0"]
+_data = {
+&"RESET": SubResource("Animation_r0b24"),
+&"open": SubResource("Animation_bt7cj")
+}
+
+[sub_resource type="LabelSettings" id="LabelSettings_r0b24"]
+font_size = 96
+font_color = Color(0, 0, 0, 1)
+
 [node name="end_screen" type="Control" unique_id=64438037]
 z_index = 5
 layout_mode = 3
@@ -17,6 +34,45 @@ layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_bottom = -6.1035156e-05
 grow_horizontal = 2
 grow_vertical = 2
 color = Color(0.92911506, 0.86576927, 0.81081593, 1)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1509398927]
+libraries/ = SubResource("AnimationLibrary_mtfn0")
+
+[node name="level" type="Label" parent="." unique_id=1299200374]
+texture_filter = 1
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -155.0
+offset_top = 125.0
+offset_right = 155.0
+offset_bottom = 222.0
+grow_horizontal = 2
+text = "Level 1"
+label_settings = SubResource("LabelSettings_r0b24")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="menu" type="Button" parent="." unique_id=193427176]
+layout_mode = 0
+offset_right = 8.0
+offset_bottom = 8.0
+
+[node name="continue" type="Button" parent="." unique_id=2039515161]
+layout_mode = 0
+offset_right = 8.0
+offset_bottom = 8.0
+
+[node name="restart" type="Button" parent="." unique_id=916858183]
+layout_mode = 0
+offset_right = 8.0
+offset_bottom = 8.0
+
+[connection signal="pressed" from="menu" to="." method="_on_menu_pressed"]
+[connection signal="pressed" from="continue" to="." method="_on_continue_pressed"]
+[connection signal="pressed" from="restart" to="." method="_on_restart_pressed"]

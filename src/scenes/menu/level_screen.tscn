@@ -8,11 +8,50 @@ bg_color = Color(0, 0, 0, 0.4627451)
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_11h5q"]
 bg_color = Color(0, 0, 0, 0.15686275)
 
+[sub_resource type="Animation" id="Animation_f3pox"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 984)]
+}
+
+[sub_resource type="Animation" id="Animation_qmala"]
+resource_name = "open"
+length = 0.4
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.4),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(0, 984), Vector2(0, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_l4sas"]
+_data = {
+&"RESET": SubResource("Animation_f3pox"),
+&"open": SubResource("Animation_qmala")
+}
+
 [node name="level_screen" type="Control" unique_id=1221292349]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_top = 984.0
+offset_bottom = 984.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_f3pox")
@@ -31,6 +70,7 @@ grow_vertical = 2
 color = Color(0.8862745, 0.85490197, 0.7372549, 1)
 
 [node name="exit" type="Button" parent="." unique_id=940911823]
+texture_filter = 1
 layout_mode = 0
 offset_left = 1006.0
 offset_top = 58.0
@@ -58,6 +98,7 @@ theme_override_constants/v_separation = 24
 columns = 3
 
 [node name="level_1" type="Button" parent="levels" unique_id=815945340]
+texture_filter = 1
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
@@ -67,6 +108,7 @@ theme_override_styles/normal = SubResource("StyleBoxFlat_11h5q")
 text = "1"
 
 [node name="level_2" type="Button" parent="levels" unique_id=1152189992]
+texture_filter = 1
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
@@ -76,6 +118,7 @@ theme_override_styles/normal = SubResource("StyleBoxFlat_11h5q")
 text = "2"
 
 [node name="level_3" type="Button" parent="levels" unique_id=782598012]
+texture_filter = 1
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
@@ -85,6 +128,7 @@ theme_override_styles/normal = SubResource("StyleBoxFlat_11h5q")
 text = "3"
 
 [node name="level_4" type="Button" parent="levels" unique_id=2054065213]
+texture_filter = 1
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
@@ -94,6 +138,7 @@ theme_override_styles/normal = SubResource("StyleBoxFlat_11h5q")
 text = "4"
 
 [node name="level_5" type="Button" parent="levels" unique_id=1027719092]
+texture_filter = 1
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
@@ -103,6 +148,7 @@ theme_override_styles/normal = SubResource("StyleBoxFlat_11h5q")
 text = "5"
 
 [node name="level_6" type="Button" parent="levels" unique_id=1587330770]
+visible = false
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
@@ -110,6 +156,9 @@ theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 48
 theme_override_styles/normal = SubResource("StyleBoxFlat_11h5q")
 text = "6"
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1269011899]
+libraries/ = SubResource("AnimationLibrary_l4sas")
 
 [connection signal="pressed" from="exit" to="." method="_on_exit_pressed"]
 [connection signal="pressed" from="levels/level_1" to="." method="pick_level" binds= [0]]

@@ -42,8 +42,8 @@ func _draw() -> void:
 		var left_wing: Vector2 = point + dir.rotated(2.5) * head_size
 		var right_wing: Vector2 = point + dir.rotated(-2.5) * head_size
 		
-		draw_line(point, left_wing, color, 6, true)
-		draw_line(point, right_wing, color, 6, true)
+		draw_line(point, left_wing, color, 6)
+		draw_line(point, right_wing, color, 6)
 
 func _process(_delta: float) -> void:
 	queue_redraw()

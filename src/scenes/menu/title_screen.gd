@@ -8,7 +8,7 @@ func _on_start_pressed() -> void:
 	level_screen.open()
 
 func _on_settings_pressed() -> void:
-	settings_screen.show()
+	settings_screen.open()
 
 func _on_exit_pressed() -> void:
 	get_tree().quit()
