@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="switchyard"
-run/main_scene="uid://ba7oaysnp8c1s"
+run/main_scene="uid://b4ggbq71lpwo4"
 config/features=PackedStringArray("4.7", "GL Compatibility")
 config/icon="res://icon.svg"
 

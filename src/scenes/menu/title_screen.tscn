@@ -37,6 +37,10 @@ bg_color = Color(0.6, 0.6, 0.6, 0.22352941)
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_wf6w8"]
 bg_color = Color(0.09, 0.09, 0.09, 0.1764706)
 
+[sub_resource type="LabelSettings" id="LabelSettings_2yfux"]
+font_size = 32
+font_color = Color(0.3647059, 0.5176471, 0.9098039, 1)
+
 [node name="title_screen" type="Control" unique_id=198211424]
 layout_mode = 3
 anchors_preset = 15
@@ -171,6 +175,15 @@ layout_mode = 1
 visible = false
 z_index = 1
 layout_mode = 1
+
+[node name="prototype" type="Label" parent="." unique_id=974836795]
+layout_mode = 0
+offset_left = 310.0
+offset_top = 383.0
+offset_right = 446.0
+offset_bottom = 415.0
+text = "prototype"
+label_settings = SubResource("LabelSettings_2yfux")
 
 [connection signal="pressed" from="menu/start" to="." method="_on_start_pressed"]
 [connection signal="pressed" from="menu/settings" to="." method="_on_settings_pressed"]

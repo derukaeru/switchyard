@@ -1,6 +1,41 @@
 [gd_scene format=3 uid="uid://8hvm6to8ikt6"]
 
-[ext_resource type="Script" uid="uid://dyiitrgmhhcml" path="res://src/scenes/maps/level.gd" id="1_skg6t"]
+[ext_resource type="Script" uid="uid://bbmm47er23f1p" path="res://src/scenes/maps/level_4.gd" id="1_skg6t"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_2yfux"]
+font_size = 72
+font_color = Color(0.33798966, 0.4423703, 0.921847, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_t4a08"]
+font_size = 56
+font_color = Color(0.3625179, 0.50411683, 0.95802194, 1)
+
+[sub_resource type="Curve" id="Curve_ifoc3"]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(0.98648655, 0.04494381), -2.3096137, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="CurveTexture" id="CurveTexture_la05k"]
+curve = SubResource("Curve_ifoc3")
+
+[sub_resource type="Gradient" id="Gradient_skg6t"]
+colors = PackedColorArray(0.3882868, 0.5978675, 0.3271417, 1, 1.732707e-06, 0.81855315, 0.8537402, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_0ssmi"]
+gradient = SubResource("Gradient_skg6t")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_2yfux"]
+particle_flag_disable_z = true
+angle_min = -77.399994
+angle_max = 147.1
+direction = Vector3(0, -1, 0)
+spread = 82.384
+initial_velocity_min = 107.53
+initial_velocity_max = 290.32
+gravity = Vector3(0, 98, 0)
+scale_min = 22.51
+scale_max = 54.77
+color_initial_ramp = SubResource("GradientTexture1D_0ssmi")
+alpha_curve = SubResource("CurveTexture_la05k")
 
 [node name="level_4" type="Node2D" unique_id=416987576]
 script = ExtResource("1_skg6t")
@@ -25,10 +60,49 @@ grow_horizontal = 2
 grow_vertical = 2
 color = Color(0.85, 0.83115834, 0.79050004, 1)
 
-[node name="tracks" type="Node2D" parent="." unique_id=1120331799]
+[node name="Label" type="Label" parent="background/ColorRect" unique_id=467627258]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -520.5
+offset_top = -143.5
+offset_right = 521.5
+offset_bottom = -71.5
+grow_horizontal = 2
+grow_vertical = 2
+text = "Thank you for playing this game!"
+label_settings = SubResource("LabelSettings_2yfux")
+horizontal_alignment = 1
+vertical_alignment = 1
 
-[node name="markings" type="Control" parent="." unique_id=350059673]
-layout_mode = 3
-anchors_preset = 0
-offset_right = 40.0
-offset_bottom = 40.0
+[node name="Label2" type="Label" parent="background/ColorRect" unique_id=287941924]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -306.5
+offset_top = 40.5
+offset_right = 307.5
+offset_bottom = 96.5
+grow_horizontal = 2
+grow_vertical = 2
+text = "Yeah, sorry that was it..."
+label_settings = SubResource("LabelSettings_t4a08")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="GPUParticles2D" type="GPUParticles2D" parent="background" unique_id=998747498]
+z_index = 1
+position = Vector2(752, 540)
+emitting = false
+amount = 64
+lifetime = 5.0
+one_shot = true
+explosiveness = 0.9
+randomness = 1.0
+process_material = SubResource("ParticleProcessMaterial_2yfux")

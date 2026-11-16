@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://b028tipn8kf0b" path="res://src/scenes/objects/switch.gd" id="1_cqamq"]
 [ext_resource type="Texture2D" uid="uid://captwa1xgd07c" path="res://src/assets/sprites/objects/switch.png" id="2_73osu"]
-[ext_resource type="AudioStream" uid="uid://k6wa7bbnd2vy" path="res://src/assets/sfx/lever.wav" id="3_dacm3"]
+[ext_resource type="AudioStream" uid="uid://clwn6wasigss0" path="res://src/assets/sfx/lever.wav" id="3_dacm3"]
 
 [node name="switch" type="TextureButton" unique_id=831432752]
 offset_right = 48.0
