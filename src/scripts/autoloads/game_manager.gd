@@ -1,9 +1,9 @@
 extends Node
 
-var level: int = 1
+var level: int = 0
 var locked_levels: Array = [false, true, true, true, true, true]
 
-@onready var end_screen: Control = load(Registry.UID["end_screen"]).instantiate()
+@onready var end_screen: CanvasLayer = load(Registry.UID["end_screen"]).instantiate()
 
 func _ready() -> void:
 	add_child(end_screen)
