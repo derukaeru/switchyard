@@ -14,7 +14,7 @@
 
 ### how can i play this?
 
-- you can find the demo on my itch.io!
+- you can find the demo on my [itch.io!](https://ssoupsou.itch.io/switchyard)
 
 ### what i used to make this game
 
